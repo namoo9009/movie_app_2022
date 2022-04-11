@@ -9,7 +9,7 @@ import Detail from './routes/Detail';
 
 function App() {
   return (
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Navigation />
             <Routes>
                 <Route path='/' element={<Home />} />
@@ -20,4 +20,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
