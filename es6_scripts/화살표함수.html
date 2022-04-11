@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표함수</title>
+    <script>
+        //선언적 함수 : 호이스틍때문에 함수가 선언된 위치에 상관없이 어디서든 호출할 수 있다.
+        compute(10,100)
+        function compute(a,b){
+            var x = a;
+            var y = b;
+            var result = x/y;
+            console.log(result);
+        }
+
+        //익명 함수
+        //compute2(10,100) // 함수가 선언되지 않았다는 에러 발생
+        // var compute2 = function(a,b){
+        //     var x = a;
+        //     var y = b;
+        //     var result2 = x * y;
+        //     console.log(result2);
+        // }
+        // compute2(10,100) //1000
+
+        //즉시 실행 함수-선언과 동시에 실행 함수, 재호출 안됨. 한번만 실행
+        (function(a){
+            var sum = a;
+            console.log(sum);
+        })(100);
+
+        var instant = (function(){
+            console.log('즉시 실행 함수');
+        })();
+
+        //console.log('2',instant()) // 함수가 없다는 에러 발생.
+        
+        //모든 매개변수를 불러올때. 
+        //arguments 객체는 인자값을 저장해주는 객체
+        function showSubject(a,b,c){
+            for(i = 0; i < arguments.length; i++){
+                console.log(arguments[i]);
+            }
+        }
+        showSubject('html','css','js','jqueyr');
+
+        //ES6 화살표함수 - function키워드 생략, (1줄일 경우에만)-{}생략가능, (1줄일 경우에만)-rturn 생략가능
+        var TheFnc = function(a,b){
+            return a * b;
+        }
+        console.log(TheFnc(2,5));
+
+        var TheFnc2 = (a,b) => a * b;
+        console.log(TheFnc2(1,4));
+
+        
+        function TheFnc2(c,d){
+            var sum = c + d;
+            return sum;
+        }
+        console.log(TheFnc2(10,5));
+
+
+        var TheFnc2 = function(c,d){
+            var sum = c + d;
+            return sum;
+        }
+        console.log(TheFnc2(3,3))
+
+        var TheFnc2 = (c,d) => {
+            var sum = c + d;
+            return sum;
+        }
+        console.log(TheFnc2(5,10))
+
+
+        // compute(10,100)
+        // function compute(a,b){
+        //     var x = a;
+        //     var y = b;
+        //     var result = x/y;
+        //     console.log(result);
+        // }
+
+        //익명 함수
+        //compute2(10,100) // 함수가 선언되지 않았다는 에러 발생
+        // var compute2 = function(a,b){
+        //     var x = a;
+        //     var y = b;
+        //     var result = x * y;
+        //     console.log(result);
+        // }
+        // compute2(10,100) //1000
+
+
+        //화살표 함수로 만들어보기
+        var compute = (a,b) => {
+            var x = a;
+            var y = b;
+            var result = x/y;
+            console.log(result);
+        }
+        compute(100,10);
+
+        var compute2 = (a,b) => {
+            var x = a;
+            var y = b;
+            var result = x * y;
+            console.log(result);
+        }
+        compute2(20,10);
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

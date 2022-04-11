@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+    <script>
+        // 객체 : 변수는 데이터 값을 하나 밖에 저장하지 못하지만, 객체는 데이터 값을 필요한 대로 만들어서 사용할 수 있다.
+        // var 변수 = {
+        //     name: '홍길동',
+        //     age: 20,
+        //     nationality: '한국'
+        // };
+        // props 객체 = {
+        //     propsName: 'coffee',
+        //     propsName2: 'true',
+        //     propsName3: Array(6)
+        // }
+        // 객체.key
+        // props.propsName
+
+        // 객체의 속성(Properties)은 객체의 속성값을 지정하는 프로퍼티와 객체의 함수 메서드로 구성된다.
+        // object.name;
+        // object.printOut();
+        // var object = {
+        //     프로퍼티: 값,
+        //     name: 홍길동,
+        //     age: 20,
+        //     nationlity: '한국',
+        //     메서드: function(){
+
+        //     },
+        //     printOut: function(){
+        //         메서드
+        //     }
+
+        // }
+
+
+        //사용자 정의 객체, 객체 리터럴(Object literal)
+        let info = {
+            subject: 'css',
+            credit: 1,
+            prinOut: function(){
+                return info.subject + info.credit + '학점';
+            }
+        };
+
+        console.log(info.subject);
+        console.log(info.credit);
+        console.log(info.prinOut());
+
+        info.days = 20; //객체 속성 추가
+        console.log(info.days);
+
+        delete info.subject; //속성 삭제
+        console.log(info.subject); //undefind
+
+        info.prinOut = function(){ //속성 변경
+            return info.credit + ", " + info.days + "일";
+        }
+        console.log(info.prinOut());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

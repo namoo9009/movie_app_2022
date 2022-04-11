@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스</title>
+    <script>
+        //클래스 : 기존에 사용했던 객체 생성과 상속 구문을 체계적인 객체지향 구문으로 보완
+        class Info{
+            constructor(a,b) {
+                this.subject = a;
+                this.credit = b;
+                this.days = [80,120,140];
+                this.day = this.days[0];
+            }
+
+            printOut() {
+                return this.subject + ',' + this.credit + '학점';
+            }
+
+            get lessontime() {
+                return this.day;
+            }
+
+            set lessontime(num) {
+                this.day = this.days[num];
+            }
+        }
+
+        var sub1 = new Info('html',1);
+        console.log(sub1.subject);  //html
+        console.log(sub1.credit);  //1
+        console.log(sub1.days);  //80 120 140
+        console.log(sub1.day);  //80
+        console.log(sub1.printOut());  //html 1학점
+        console.log(sub1.lessontime);  //80
+        sub1.lessontime = 1;
+        console.log(sub1.lessontime);  //120
+
+        var sub2 = new Info('css', 2);
+        console.log(sub2.subject);  //css
+        console.log(sub2.credit);  //2
+        console.log(sub2.days);  //80 120 140
+        console.log(sub2.day);  //80
+        console.log(sub2.printOut());  //css 2학점
+        console.log(sub2.lessontime);  //80
+        sub2.lessontime = 2;
+        console.log(sub2.lessontime);  //140
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

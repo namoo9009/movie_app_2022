@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 변수 : let, const</title>
+    <script>
+        // var num = 10;
+        // var num = 20;
+        // document.write(num); //20
+        //var 변수는 중복 선언 가능
+
+        // let num = 10;
+        // let num = 20;
+        // document.write(num)  //에러. let 변수는 중복 선언 안됨.
+        //num = 20; //const 변수는 값 변경 가능.
+        //document.write(num); //20
+
+        const DIVISION_VALUE = 100;
+        // const DIVISION_VALUE = 200; //const 중복 선언 안됨.
+        // DIVISION_VALUE = 300; //상수. 즉 값을 변경할수 없음
+
+        // let cm = prompt('cm를 입력하세요', '')
+        // let m = cm / DIVISION_VALUE;
+        // document.write(m + 'm입니다.');
+
+        //함수 레벨 스코프와 블록 레벨 스코프
+        //전역변수, 지역변수
+
+        var kor = 90;
+        function getScore(){
+            kor = 100;
+            console.log(kor);
+        }
+        getScore();
+        console.log(kor);
+
+        var eng = 90; //전역변수
+        function getScore2(){
+            var eng = 100; //지역변수
+            console.log(eng); //100. 함수 안에선 지역변수의 우선순위가 높다.
+        }
+        getScore2();
+        console.log(eng); //90. 전역변수 출력
+
+        var num2 = 10; //전역변수
+        {
+            var num2 = 20; //함수 블록이 아니라 전역변수가 된다.
+            console.log(num2); //20
+        }
+        console.log(num2); //20
+
+        // ES6의 let과 const는 함수블록이 아니더라도 일반 블록 안에서 변수를 선언하면 지역변수가 된다.
+        //일반블록 예 : for문, if문 등..
+        let num3 = 100; //전역변수
+        {
+            let num3 = 30; //지역변수
+            console.log(num3); //30. 지역변수 출력
+        }
+        console.log(num3); //100. 전역변수 출력
+
+
+        var num4 = 70; //전역변수
+        if(num4 === 70){
+            var sum = 50; //var 키워드라서 블록 안에 선언된 변수는 전역변수가 된다.
+        }
+        console.log(sum); //50
+
+        let num5 = 90; //전역변수
+        if(num5 === 90){
+            let sum2 = 50; //let 키워드라서 블록 안에 선언된 변수는 지역변수가 된다.
+        }
+        // console.log(sum2); // 에러. 지역변수를 전역변수에서 불러올 수 없다.
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

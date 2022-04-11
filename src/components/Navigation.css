@@ -1,0 +1,48 @@
+.nav{
+    z-index: 1;
+    position: fixed;
+    left: 10px;
+    top: 50px;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 13px 27px -5px rgba(50,50,93,0.25), 0 8px 16px -8px rgba(0,0,0,0.3), 0 -6px 16px -6px rgba(0,0,0,0.025);
+    display: flex;
+    flex-direction: column;
+}
+.nav a{
+    text-align: center;
+    text-decoration: none;
+    color: #0008fc;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+}
+/* not(): 제외하고 선택됨 */
+.nav a:not(:last-child){
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .nav{
+        width: 100%;
+        bottom: 0;
+        left: initial;
+        top: initial;
+        /* left: auto, top: auto는 이전에 설정한 값이 지워진다. initial은 이전값 유지한다. */
+    }
+    /* react 에서는 Link to를 사용했지만 DOM에서는 a로 표현되기 때문에 css에서 선택자는 a로 */
+    /* .nav a{
+        text-align: center;
+        text-decoration: none;
+        color: #0008fc;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    /* not(): 제외하고 선택됨 
+    .nav a:not(:last-child){
+        margin-bottom: 20px;
+    } */
+    
+}
